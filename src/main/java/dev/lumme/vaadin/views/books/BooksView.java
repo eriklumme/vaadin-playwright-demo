@@ -2,6 +2,7 @@ package dev.lumme.vaadin.views.books;
 
 import java.util.Optional;
 
+import com.vaadin.flow.router.RouteAlias;
 import dev.lumme.vaadin.data.entity.Book;
 import dev.lumme.vaadin.data.service.BookService;
 import com.vaadin.flow.component.Component;
@@ -38,6 +39,7 @@ import org.springframework.web.util.UriUtils;
 import elemental.json.Json;
 
 @Route(value = "book")
+@RouteAlias("")
 @PageTitle("Books")
 @CssImport("./views/books/books-view.css")
 public class BooksView extends Div {

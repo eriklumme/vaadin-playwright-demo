@@ -7,26 +7,19 @@ const { serverSideRoutes } = new Flow({
 export const routes = [
   // for client-side, place routes below (more info https://vaadin.com/docs/v18/flow/typescript/creating-routes.html)
   {
+    path: 'login',
+    component: 'login-view',
+    action: async () => {
+      await import('./views/login/login-view');
+    },
+  },
+  {
     path: '',
     component: 'main-view',
     action: async () => {
       await import('./views/main/main-view');
     },
     children: [
-      {
-        path: '',
-        component: 'login-view',
-        action: async () => {
-          await import('./views/login/login-view');
-        },
-      },
-      {
-        path: 'login',
-        component: 'login-view',
-        action: async () => {
-          await import('./views/login/login-view');
-        },
-      },
       // for server-side, the next magic line sends all unmatched routes:
       ...serverSideRoutes, // IMPORTANT: this must be the last entry in the array
     ],

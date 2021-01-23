@@ -17,7 +17,6 @@ export class MainView extends LitElement {
   @property({ type: Object }) location = router.location;
 
   @property({ type: Array }) menuTabs: MenuTab[] = [
-    { route: 'login', name: 'Login' },
     { route: 'book', name: 'Books' },
   ];
 
@@ -167,8 +166,6 @@ export class MainView extends LitElement {
     let tabName = '';
     if (currentTab) {
       tabName = currentTab.name;
-    } else {
-      tabName = 'Login';
     }
     return tabName;
   }

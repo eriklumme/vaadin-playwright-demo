@@ -1,6 +1,5 @@
 package dev.lumme.vaadin.data.endpoint;
 
-import com.vaadin.flow.server.VaadinSession;
 import com.vaadin.flow.server.connect.Endpoint;
 import com.vaadin.flow.server.connect.auth.AnonymousAllowed;
 import org.springframework.beans.factory.annotation.Autowired;

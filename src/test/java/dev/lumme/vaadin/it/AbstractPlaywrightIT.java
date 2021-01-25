@@ -1,7 +1,9 @@
 package dev.lumme.vaadin.it;
 
 import com.microsoft.playwright.*;
+import dev.lumme.vaadin.it.po.LoginPO;
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
@@ -32,7 +34,16 @@ abstract class AbstractPlaywrightIT {
         playwright.close();
     }
 
+    @AfterEach
+    void tearDown() {
+        page.context().close();
+    }
+
     protected Page getPage() {
         return page;
+    }
+
+    protected LoginPO getLoginPage() {
+        return new LoginPO(getPage());
     }
 }

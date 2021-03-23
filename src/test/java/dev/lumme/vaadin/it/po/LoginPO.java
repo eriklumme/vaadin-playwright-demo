@@ -10,9 +10,10 @@ public class LoginPO {
         this.page = page;
     }
 
-    public void logIn(String username, String password) {
+    public BookViewPO logIn(String username, String password) {
         page.type("vaadin-text-field[name='username']", username);
         page.type("vaadin-password-field", password);
         page.click("vaadin-button");
+        return new BookViewPO(page);
     }
 }
